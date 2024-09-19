@@ -45,17 +45,42 @@ const [visible, setVisible] = useState(false);
 <Link to='/cart'>
 <img src={assets.cart_icon} alt="Cart Icon"  className='w-5'/>
 </Link>
+
+
+      {/*side Menu For the smaller screen  */}
 <img onClick={() => setVisible(true)} src={assets.menu_icon} alt="" className='sm:hidden w-5 cursor-pointer' />
       </div>
-      {/*side Menu For the smaller screen  */}
       <div className={`absolute top-0 right-0  bottom-0 overflow-hidden bg-white  transition-all ${visible ? 'w-full' : 'w-0'}`}>
        <div className="flex flex-col text-gray-600">
         <div  onClick={() => setVisible(false)} className='flex  items-center gap-4 p-3'>
             <img src={assets.dropdown_icon} alt="Logo" className=" h-4 rotate-180" />
-            <p>back</p>
+            <p>Back</p>
         </div>
        </div>
+       <div>
+        
+       </div>
+       <div className='flex flex-col'>
+
+
+       <NavLink onClick={()=>setVisible(false)} className='py-3 pl-6 border uppercase' to='/'>
+          Home
+        </NavLink>
+        <NavLink onClick={()=>setVisible(false)} className='py-3 pl-6 border uppercase' to='/collection'>
+          Collection
+        </NavLink>
+        <NavLink onClick={()=>setVisible(false)} className='py-3 pl-6 border uppercase' to='/About'>
+          About
+        </NavLink>
+        <NavLink onClick={()=>setVisible(false)} className='py-3 pl-6 border uppercase' to='/contact'>
+          Contact
+        </NavLink>
+
+       </div>
       </div>
+
+
+
       </div>
   );
 };
